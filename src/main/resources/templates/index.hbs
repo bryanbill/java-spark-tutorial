@@ -1,0 +1,41 @@
+{{#partial "title" }}
+    Welcome to My Blog
+{{/partial}}
+
+{{#partial "content"}}
+    <div class="jumbotron text-center">
+        <h1>Welcome to My Blog</h1>
+        <p>This is a blog created with the help of the </p>
+        <a href="/new">
+            <button class="btn btn-primary">Create Post</button>
+        </a>
+    </div>
+   <div class="container">
+       <div class="row">
+           {{#each posts}}
+               <div class="col-md-4">
+                   <div class="card">
+                       <div class="card-header">
+                           <h3>{{date}}</h3>
+                       </div>
+                       <div class="card-body">
+                           <p>{{content}}</p>
+                       </div>
+                       <div class="card-footer">
+                           <div class="d-flex">
+                               <span class="text-muted">{{author}}</span>
+                              <form action="/posts/{{id}}" method="DELETE">
+                                  <button class="btn btn-danger ml-auto ">Delete</button>
+                              </form>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           {{/each}}
+       </div>
+   </div>
+{{/partial}}
+
+{{> layout.hbs}}
+
+

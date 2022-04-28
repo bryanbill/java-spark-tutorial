@@ -1,0 +1,26 @@
+{{#partial "title" }}
+    Check out my travel photos! <!-- I've changed!-->
+{{/partial}}
+
+{{#partial "content"}}
+   <div class="container">
+<!--       Forms-->
+       <form action="/" method="get" enctype="multipart/form-data">
+           <div class="form-group">
+               <label for="author">Author</label>
+               <input type="text" class="form-control" id="author" name="author" placeholder="Author">
+           </div>
+           <div class="form-group">
+               <label for="content">Content</label>
+               <textarea class="form-control" id="content" name="content" rows="3"></textarea>
+           </div>
+           <div class="form-group">
+               <label for="image">Date Created</label>
+               <input type="date" class="form-control-file" id="date" name="date">
+           </div>
+           <button type="submit" class="btn btn-primary">Submit</button>
+       </form>
+   </div>
+{{/partial}}
+
+{{> layout.hbs}}
